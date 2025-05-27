@@ -28,7 +28,7 @@ export default function CreateListPopup() {
     return (
       <>
         <div
-          className="fixed pointer-events-auto w-full h-full bg-black/10 z-40"
+          className="fixed pointer-events-auto top-0 left-0 w-screen h-screen bg-black/10 z-40"
           onClick={() => setIsCreateListPopupOpened(false)}
         />
         <div className="fixed top-1/2 left-1/2 -translate-1/2 z-50">
