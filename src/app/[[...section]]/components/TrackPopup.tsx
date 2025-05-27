@@ -23,7 +23,6 @@ export default function TrackPopup({
   const updateTrack = useMutation(api.users.updateTrack);
 
   const update = async () => {
-    console.log(trackLists, openedTrack?.trackName);
     await updateTrack({
       userId: "testing_user",
       lists: trackLists,

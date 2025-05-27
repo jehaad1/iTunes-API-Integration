@@ -7,6 +7,7 @@ import { api } from "../../../../convex/_generated/api";
 import Explore from "./Explore";
 import Track from "./Track";
 import TrackPopup from "./TrackPopup";
+import { createPortal } from "react-dom";
 
 export default function List() {
   const [currentList, setCurrentList] = useAtom(currentListAtom);
@@ -52,7 +53,10 @@ export default function List() {
           </button>
         </>
       )}
-      <TrackPopup userTracks={userTracks} userLists={userLists} />
+      {createPortal(
+        <TrackPopup userTracks={userTracks} userLists={userLists} />,
+        document.body
+      )}
     </div>
   );
 }
