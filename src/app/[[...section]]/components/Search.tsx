@@ -8,9 +8,7 @@ const fetchItunesResults = async (searchTerm: string) => {
   if (!searchTerm || searchTerm.trim().length === 0) return [];
 
   const response = await fetch(
-    `https://itunes.apple.com/search?term=${encodeURIComponent(
-      searchTerm
-    )}&limit=10`
+    `/api/itunes?term=${encodeURIComponent(searchTerm)}&limit=10`
   );
 
   if (!response.ok) throw new Error("Failed to fetch iTunes");

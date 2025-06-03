@@ -7,15 +7,9 @@ export default function Explore() {
   const { data } = useQuery({
     queryKey: ["explore-thmanyah"],
     queryFn: async () => {
-      const thmanyah = await fetch(
-        "https://itunes.apple.com/search?term=thmanyah"
-      );
-
-      const music = await fetch("https://itunes.apple.com/search?term=music");
-
-      const podcast = await fetch(
-        "https://itunes.apple.com/search?term=podcast"
-      );
+      const thmanyah = await fetch("/api/itunes?term=thmanyah");
+      const music = await fetch("/api/itunes?term=music");
+      const podcast = await fetch("/api/itunes?term=podcast");
 
       const data = {
         thmanyah: await thmanyah.json(),
